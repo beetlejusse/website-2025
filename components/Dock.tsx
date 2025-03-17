@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 
 const navItems = [
-  { href: "/events", label: "Events" },
+  { href: "/events_dock", label: "Events" },
   { href: "/team", label: "Team" },
   { href: "/", icon: "/ieee logo.jpg", label: "" },
   { href: "/faculty", label: "Faculty" },
