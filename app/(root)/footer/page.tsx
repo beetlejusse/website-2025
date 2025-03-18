@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Youtube, Linkedin, Phone, Mail, X, Twitter } from "lucide-react";
+import { Instagram, Youtube, Linkedin, Phone, Mail, Twitter } from "lucide-react";
 import { joinUsURL } from "@/lib/utils";
 
 const EndFooter = () => {

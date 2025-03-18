@@ -4,7 +4,6 @@ import NavBar from "@/components/NavBar";
 import Image from "next/image";
 import { DockInfo } from "@/components/Dock";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
 import AboutPage from "./(root)/about/page";
 import EventsInfo from "./(root)/events-page/page";
 import Faculty from "./(root)/faculty/page";
@@ -13,15 +12,6 @@ import EndFooter from "./(root)/footer/page";
 import CTA from "./(root)/cta/page";
 
 export default function Home() {
-  const router = useRouter();
-
-  const handleGalleryClick = () => {
-    router.push("/gallery");
-  };
-  const handleSIGclick = () => {
-    router.push("/sig");
-  };
-
   return (
     <div
       className="relative min-h-screen flex flex-col justify-center items-center text-white"
@@ -36,7 +26,6 @@ export default function Home() {
       <div className="relative min-h-screen flex flex-col w-full">
         <NavBar />
 
-        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +50,6 @@ export default function Home() {
             Empowering Innovation, Learning, and Collaboration in Technology
           </motion.p>
 
-          {/* Image Section */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -82,7 +70,6 @@ export default function Home() {
         </motion.div>
       </div>
 
-      {/* Sub Pages */}
       <AboutPage />
       <Faculty />
       <EventsInfo />
@@ -90,7 +77,6 @@ export default function Home() {
       <CTA />
       <EndFooter />
 
-      {/* Dock */}
       <footer>
         <DockInfo />
       </footer>
