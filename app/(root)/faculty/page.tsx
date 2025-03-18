@@ -8,8 +8,8 @@ import { containerVariants, cardVariants } from "@/lib/utils";
 const Faculty = () => {
   const facultyMembers = [
     {
-      name: "Dr. Achal Sharma",
-      position: "Dean, HOD - Computer Science",
+      name: "Prof. (Dr.) Achal Sharma",
+      position: "Dean Academics, HOD - Computer Science",
       image: "/achal_sir.png",
       bio: "AI/ML Expert with 15+ years experience, Published 50+ research papers",
     },
@@ -35,13 +35,12 @@ const Faculty = () => {
       className="min-h-screen py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Heading Section */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12 lg:mb-16"
+          className="text-center mb-6 sm:mb-12 lg:mb-16"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 mb-2 sm:mb-4">
             Our Faculty
@@ -51,7 +50,6 @@ const Faculty = () => {
           </p>
         </motion.div>
 
-        {/* Faculty Cards Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -66,7 +64,6 @@ const Faculty = () => {
               whileHover="hover"
               className="group relative bg-black/30 backdrop-blur-lg rounded-xl lg:rounded-2xl p-4 sm:p-6 shadow-lg lg:shadow-xl border border-white/10 hover:border-cyan-400/30 transition-all duration-300"
             >
-              {/* Faculty Image */}
               <div className="relative aspect-square w-full rounded-lg lg:rounded-xl overflow-hidden">
                 <Image
                   src={member.image}
@@ -78,7 +75,6 @@ const Faculty = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
 
-              {/* Faculty Details */}
               <div className="mt-4 sm:mt-6 text-center">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">
                   {member.name}
