@@ -10,13 +10,18 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", damping: 20 }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 w-[70%] sm:w-[50%] md:w-[40%] bg-[#0a0f1d]/80 backdrop-blur-3xl text-white rounded-xl shadow-lg flex items-center justify-center px-6 py-3 z-50"
+      className="
+        fixed top-4 left-1/2 -translate-x-1/2 
+        w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] 
+        bg-[#0a0f1d]/80 backdrop-blur-3xl text-white rounded-xl shadow-lg 
+        flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 z-50
+      "
     >
-      <div className="flex items-center font-bold text-xl sm:text-2xl md:text-3xl font-oswald">
-        <span className="mr-2 text-4xl">IEEE</span>
+      <div className="flex items-center font-bold text-lg sm:text-xl md:text-2xl font-oswald">
+        <span className="mr-2 text-3xl sm:text-4xl">IEEE</span>
         <RotatingText
           texts={["BPIT", "Creativity meets Innovation"]}
-          mainClassName="px-3 py-1 bg-cyan-400 text-black rounded-lg font-bold"
+          mainClassName="px-2 sm:px-3 py-1 bg-cyan-400 text-black rounded-lg font-bold"
           staggerFrom="last"
           initial={{ y: "100%" }}
           animate={{ y: 0 }}
