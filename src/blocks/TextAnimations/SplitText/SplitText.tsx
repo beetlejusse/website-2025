@@ -1,7 +1,3 @@
-/*
-	Installed from https://reactbits.dev/ts/tailwind/
-*/
-
 import { useSprings, animated, SpringConfig } from "@react-spring/web";
 import { useEffect, useRef, useState } from "react";
 
@@ -94,9 +90,10 @@ const SplitText: React.FC<SplitTextProps> = ({
               letterIndex;
 
             return (
+              //@ts-ignore
               <animated.span
                 key={index}
-                style={springs[index] as unknown as React.CSSProperties}
+                style={springs[index]}
                 className="inline-block transform transition-opacity will-change-transform"
               >
                 {letter}
