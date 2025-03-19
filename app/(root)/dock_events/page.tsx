@@ -1,11 +1,9 @@
-"use client";
-
 import React from 'react'
 
-const Sponsors = () => {
+const page = () => {
   return (
     <div>page</div>
   )
 }
 
-export default Sponsors
+export default page

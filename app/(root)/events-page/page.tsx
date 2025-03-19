@@ -10,7 +10,7 @@ const EventsInfo = () => {
   const router = useRouter();
 
   const handleEventClick = () => {
-    router.push("/docKEvents");
+    router.push("/dock_events");
   };
   return (
     <motion.div
