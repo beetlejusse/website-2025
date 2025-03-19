@@ -1,13 +1,16 @@
+"use client";
+
 import { motion } from "framer-motion";
 import React from "react";
 import { containerVariants, itemVariants, pulseAnimation } from "@/lib/utils";
 
-const AchiieveMents = () => {
-  const achievements = [
+const Achievements = () => {
+  const achievements: string[] = [
     "Over 50 successful tech events organized",
     "Partnership with 15+ leading tech companies",
     "1000+ students trained in cutting-edge technologies",
   ];
+
   return (
     <div>
       <motion.div
@@ -42,4 +45,4 @@ const AchiieveMents = () => {
   );
 };
 
-export default AchiieveMents;
+export default Achievements;
