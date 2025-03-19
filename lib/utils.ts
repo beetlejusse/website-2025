@@ -38,7 +38,7 @@ export const joinUsURL = process.env.NEXT_PUBLIC_JOIN_US_URL || "";
 export const testimonials = [
   {
     quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+      "I AM MUSIC",
     name: "Himanshu Bhenwal",
     designation: "CHAIRPERSON",
     src: "/members/himanshu.png",
@@ -66,14 +66,14 @@ export const testimonials = [
   },
   {
     quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+      "I'm a mix of sunshine and a little bit of chaos—spreading good vibes, chasing dreams, and always up for an adventure! ✨",
     name: "Aditi kansal",
     designation: "Chair WIE Student Branch Affinity Group",
     src: "/members/aditi.jpg",
   },
   {
     quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+      "If virtue could be depicted in the visage of a man, it would certainly resemble me",
     name: "Jai Tyagi",
     designation: "Chairperson, ComSoc",
     src: "/members/jai.png",
