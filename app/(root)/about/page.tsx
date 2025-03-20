@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -6,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { containerVariants, itemVariants } from "@/lib/utils";
 
-const AboutPage = () => {
+export default function About()  {
 
   return (
     <motion.div
@@ -115,5 +117,3 @@ const AboutPage = () => {
     </motion.div>
   );
 };
-
-export default AboutPage;

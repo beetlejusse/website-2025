@@ -1,9 +1,11 @@
+"use client";
+
 import { AnimatedTestimonials } from "@/src/components/ui/animated-testimonials";
 import { motion } from "framer-motion";
 import React from "react";
 import { testimonials } from "@/lib/utils";
 
-const CTA = () => {
+export default function CTA() {
   return (
     <div className="text-white">
       <motion.div
@@ -22,5 +24,3 @@ const CTA = () => {
     </div>
   );
 };
-
-export default CTA;

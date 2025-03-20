@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AboutPage from "./(root)/about/page";
 import EventsInfo from "./(root)/events-page/page";
 import Faculty from "./(root)/faculty/page";
 import Achievements from "./(root)/achievements/page";
 import EndFooter from "./(root)/footer/page";
 import CTA from "./(root)/cta/page";
+import About from "./(root)/about/page";
 
 export default function Home() {
   return (
@@ -60,7 +60,7 @@ export default function Home() {
         </motion.div>
       </div>
 
-      <AboutPage />
+      <About />
       <Faculty />
       <EventsInfo />
       <Achievements />
