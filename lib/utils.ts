@@ -59,7 +59,7 @@ export const testimonials = [
   },
   {
     quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+      "Pain, mistakes and heartache behind strength, lessons and pride",
     name: "Mansimar Singh",
     designation: "Treasurer",
     src: "/members/mansimar.jpg",
@@ -73,10 +73,17 @@ export const testimonials = [
   },
   {
     quote:
-      "If virtue could be depicted in the visage of a man, it would certainly resemble me",
+      "The Man, The Myth, The Legend",
     name: "Jai Tyagi",
     designation: "Chairperson, ComSoc",
     src: "/members/jai.png",
+  },
+  {
+    quote:
+      "Hardwork always pays off, it worked for me will work for you too.",
+    name: "Harsh Sharma",
+    designation: "WebMaster",
+    src: "/members/harsh.jpg",
   },
 ];
 
