@@ -1,22 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { DockInfo } from "@/components/Dock";
-import NavBar from "@/components/NavBar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "IEEE",
-  description: "IEEE BPIT branch Web Application",
+  title: "IEEE BPIT",
+  keywords: [
+    "IEEE",
+    "BPIT",
+    "Institute of Electrical and Electronics Engineers",
+    "Delhi",
+    "India",
+  ],
+  authors: [{ name: "IEEE BPIT" }],
+  description:
+    "IEEE BPIT is the student branch of the Institute of Electrical and Electronics Engineers at Bharatiya Vidya Bhavan's P.G. Institute of Technology, Delhi.",
+  openGraph: {
+    title: "IEEE BPIT",
+    description:
+      "IEEE BPIT is the student branch of the Institute of Electrical and Electronics Engineers at Bharatiya Vidya Bhavan's P.G. Institute of Technology, Delhi.",
+    url: "https://ieeebpit.org",
+    siteName: "IEEE BPIT",
+    images: [
+      {
+        url: "/ieee-logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "IEEE BPIT Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -26,23 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{
-          backgroundImage: `url("/background.png")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundAttachment: "fixed",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <NavBar />
-
-        {children}
-        <footer>
-          <DockInfo />
-        </footer>
-      </body>
+      <body className="bg-background text-foreground antialiased">{children}</body>
     </html>
   );
 }
