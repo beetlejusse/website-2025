@@ -42,7 +42,7 @@ export default function Navbar() {
           className={cn(
             "flex items-center justify-between",
             "rounded-2xl px-4 py-2",
-            "bg-white/80 dark:bg-background/80 backdrop-blur-lg",
+            " backdrop-blur-2xl",
             "border border-primary/5 dark:border-primary/10",
             "shadow-[0_5px_30px_rgba(0,0,0,0.03)] dark:shadow-[0_5px_30px_rgba(255,255,255,0.02)]"
           )}
@@ -59,7 +59,7 @@ export default function Navbar() {
               />
               <AvatarFallback></AvatarFallback>
             </Avatar>
-            <span className="font-mono text-xs md:text-2xl">IEEE BPIT</span>
+            <span className="font-mono text-xs text-yellow-50 md:text-2xl">IEEE BPIT</span>
           </Link>
 
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -69,7 +69,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="hover-underline font-mono dark:text-gray-100 text-black relative group text-lg font-bold"
+                className="hover-underline font-mono text-gray-100 relative group text-lg font-bold"
               >
                 {item.text}
               </Link>
