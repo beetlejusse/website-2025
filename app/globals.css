@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Condiment&family=Great+Vibes&family=Oswald:wght@200..700&family=Press+Start+2P&family=Rye&family=Tiny5&display=swap');
+
 
 @layer utilities {
   .text-balance {
@@ -95,6 +94,6 @@ body {
 
 @layer components {
   .hover-underline {
-    @apply relative after:absolute after:content-[''] after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+    @apply relative after:absolute after:content-[''] after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 }
