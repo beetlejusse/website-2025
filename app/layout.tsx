@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Borel, Condiment, Great_Vibes, Oswald, Press_Start_2P, Rye } from "next/font/google";
+
+
+const press = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-press",
+});
 
 export const metadata: Metadata = {
   title: "IEEE BPIT",
@@ -39,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground">{children}</body>
+      <body className={` ${press.variable} bg-background antialiased`}>{children}</body>
     </html>
   );
 }
