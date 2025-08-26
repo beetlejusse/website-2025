@@ -16,18 +16,19 @@ export default function Home() {
           raysOrigin="top-center"
           raysColor="#00ffff"
           raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
+          lightSpread={1.2}
+          rayLength={1.5}
           followMouse={true}
           mouseInfluence={0.1}
           noiseAmount={0.1}
           distortion={0.05}
+          fadeDistance={0.1}
           className="custom-rays"
         />
       </div>
 
       <Hero />
-      <Teams />
+        <Teams />
       <section className="h-screen flex items-center justify-center">
         <Footer />
       </section>

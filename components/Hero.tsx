@@ -390,7 +390,7 @@ const Hero = () => {
 
    return (
     <div className=" w-full h-screen flex items-center justify-center relative">
-      {/* <LightRays
+      <LightRays
         raysOrigin="top-center"
         raysColor="#00ffff"
         raysSpeed={1.5}
@@ -402,7 +402,7 @@ const Hero = () => {
         distortion={0.05}
         className="custom-rays z-40"
         fadeDistance={0.1}
-      /> */}
+      />
 
       <canvas
         ref={canvasRef}
