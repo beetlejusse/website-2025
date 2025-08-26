@@ -122,7 +122,7 @@ const articleTop = [
 const Teams = () => {
   return (
     <div className="bg-black min-h-screen flex flex-col items-center justify-center p-8">
-      <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-press text-white mb-12 tracking-wider">Meet Our Team</h1>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-pressstart text-white mb-12 tracking-wider">Meet Our Team</h1>
       <div className="relative w-full">
         <ProductPreview
           productSrc="./team.png"
