@@ -13,11 +13,11 @@ const config: Config = {
 			fontFamily: {
 				borel: ["Borel", "cursive"],
 				condiment: ["Condiment", "cursive"],
-				vibes: ["Great Vibes", "cursive"],
+				greatvibes: ["Great Vibes", "cursive"],
 				oswald: ["Oswald", "sans-serif"],
-				press: ["Press Start 2P", "cursive"],
-				rye: ["Rye", "serif"],
-				tiny: ["Tiny5", "sans-serif"],
+				pressstart: ["'Press Start 2P'", "mono"],
+				rye: ["Rye", "cursive"],
+				tiny5: ["Tiny5", "sans-serif"],
 			},
 			colors: {
 				background: 'hsl(var(--background))',
