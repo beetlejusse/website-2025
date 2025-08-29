@@ -14,6 +14,7 @@ const articleTop = [
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
+      imageSrc: "./execom/arpan.png",
     },
     {
       title: {
@@ -25,6 +26,7 @@ const articleTop = [
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
+      imageSrc: "./execom/aditya.png",
     },
     {
       title: {
@@ -36,6 +38,7 @@ const articleTop = [
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
+      imageSrc: "./execom/sagar.png",
     },
     {
       title: {
@@ -47,6 +50,7 @@ const articleTop = [
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
+      imageSrc: "./execom/swastika.png",
     },
     {
       title: {
@@ -58,6 +62,7 @@ const articleTop = [
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
+      imageSrc: "./execom/vishal.png",
     },
   ]
  
@@ -130,7 +135,9 @@ const Teams = () => {
           articleBottom={articleBottom}
           start="top 5%"
           rotate={0}
-          scaleFactor={0.6} 
+          scaleFactor={0.7} 
+          productHeight={1000}
+          productWidth={1000}
         />
       </div>
     </div>

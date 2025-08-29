@@ -27,6 +27,13 @@ interface ProductPreviewProps {
       className?: string
     }
     icon?: React.ReactNode
+    imageSrc?: string // NEW: per-top-item image
+    // ... NEW per-item overrides to align/scale images consistently
+    imageScale?: number
+    imageOffsetX?: number // px
+    imageOffsetY?: number // px
+    imageRotate?: number // deg
+    imageObjectFit?: "cover" | "contain"
   }[]
   articleBottom: {
     title: {
@@ -39,6 +46,16 @@ interface ProductPreviewProps {
     }
     icon?: React.ReactNode
   }[]
+  // NEW: global defaults for image sizing/position so all images look consistent
+  imageDefaults?: {
+    scale?: number
+    offsetX?: number // px
+    offsetY?: number // px
+    rotate?: number // deg
+    objectFit?: "cover" | "contain"
+    maxW?: string // e.g., "min(80vw, 900px)"
+    maxH?: string // e.g., "70vh"
+  }
 }
 
 export function ProductPreview({
@@ -53,6 +70,16 @@ export function ProductPreview({
   articleTop,
   articleBottom,
   length = (articleTop.length * 2 - 1) * 50,
+  imageDefaults = {
+    // Increased defaults for better presence
+    scale: 1.35,
+    offsetX: 0,
+    offsetY: 0,
+    rotate: 0,
+    objectFit: "contain",
+    maxW: "min(92vw, 1200px)",
+    maxH: "min(82vh, 880px)",
+  },
 }: ProductPreviewProps) {
   const mainRef = useRef<HTMLElement>(null)
   const dividerTopRef = useRef<HTMLSpanElement>(null)
@@ -167,7 +194,7 @@ export function ProductPreview({
           "w-full h-full bg-black flex justify-center items-center dark:text-white text-white px-3"
         )}
       >
-        <div className="relative flex justify-between flex-col w-[80vw] h-[90vh]">
+        <div className="relative flex justify-between flex-col w-[92vw] md:w-[80vw] h-[80vh] md:h-[90vh]">
           <article
             key={1}
             ref={articleTopRef}
@@ -206,14 +233,53 @@ export function ProductPreview({
               )}
             </div>
           </article>
-          <img
-            src={productSrc}
-            alt="error loading image"
-            height={productHeight * scaleFactor}
-            width={productWidth * scaleFactor}
-            style={{ rotate: `${rotate}deg`, transformOrigin: "top" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          />
+          {(() => {
+            const imgIndex = currentTopIndex !== -1 ? currentTopIndex : 0
+            const item = articleTop?.[imgIndex]
+            const currentImg = item?.imageSrc || productSrc
+            const currentAlt = item?.title?.text || "preview"
+
+            // Resolve per-item overrides with defaults
+            const baseScale = item?.imageScale ?? imageDefaults.scale ?? 1
+            const scale = baseScale * 1.15 // global boost
+            const offsetX = item?.imageOffsetX ?? imageDefaults.offsetX ?? 0
+            const offsetY = item?.imageOffsetY ?? imageDefaults.offsetY ?? 0
+            const extraRotate = item?.imageRotate ?? imageDefaults.rotate ?? 0
+            const objectFit = item?.imageObjectFit ?? imageDefaults.objectFit ?? "contain"
+            const maxW = imageDefaults.maxW ?? "min(80vw, 900px)"
+            const maxH = imageDefaults.maxH ?? "70vh"
+
+            // Compose transform relative to centered container
+            const transform = `translate(${offsetX}px, ${offsetY}px) rotate(${(rotate ?? 0) + extraRotate}deg) scale(${scale})`
+
+            return (
+              <div
+                key={currentImg}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center"
+                style={{ width: maxW, height: maxH }}
+              >
+                <img
+                  src={currentImg}
+                  alt={currentAlt}
+                  decoding="async"
+                  loading="lazy"
+                  style={{
+                    height: "100%",
+                    width: "auto",
+                    transform,
+                    transformOrigin: "center",
+                    objectFit,
+                    backfaceVisibility: "hidden",
+                    WebkitFontSmoothing: "antialiased",
+                    willChange: "transform",
+                    filter: "drop-shadow(0 12px 40px rgba(0,0,0,0.55))",
+                  }}
+                  className="select-none"
+                  draggable={false}
+                />
+              </div>
+            )
+          })()}
           <article
             key={2}
             ref={articleBottomRef}

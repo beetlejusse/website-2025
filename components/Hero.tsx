@@ -249,7 +249,7 @@ const Hero = () => {
         const SMALL_PIXEL_SIZE = 4 * scale;
   
         pixelsRef.current = [];
-        const words = ["IEEE BPIT", "CREATIVITY MEETS INNOVATION"];
+        const words = ["IEEE  BPIT", "CREATIVITY MEETS INNOVATION"];
   
         const calculateWordWidth = (word: string, pixelSize: number) => {
           return (
