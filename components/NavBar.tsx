@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Avatar } from "@radix-ui/react-avatar";
 import { AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +23,7 @@ export default function Navbar() {
   const navItems = [
     { text: "./team.sh", href: "/team" },
     { text: "./projects.sh", href: "/projects" },
-    { text: "./events.sh", href: "/events" },
+    { text: "./events.sh", href: "/event" },
   ];
 
   return (
@@ -59,11 +59,12 @@ export default function Navbar() {
               />
               <AvatarFallback></AvatarFallback>
             </Avatar>
-            <span className="font-mono text-xs text-yellow-50 md:text-2xl">IEEE BPIT</span>
+            <span className="font-mono text-yellow-50 text-2xl">IEEE BPIT</span>
           </Link>
 
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          </div>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+          {/* Desktop nav */}
           <div className="hidden md:flex items-center space-x-5 ">
             {navItems.map((item) => (
               <Link
@@ -74,41 +75,69 @@ export default function Navbar() {
                 {item.text}
               </Link>
             ))}
-          
           </div>
 
-          <div className="flex md:hidden items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden rounded-full"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
-              ) : (
-                <Menu className="h-5 w-5" />
-              )}
-            </Button>
+          {/* Mobile: themed drawer */}
+          <div className="flex md:hidden items-center space-x-2">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden rounded-full"
+                  aria-label="Open menu"
+                >
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent
+                side="right"
+                className="border-white/10 bg-[#0a0a0acc] backdrop-blur-2xl p-0 overflow-hidden"
+              >
+                {/* Decorative background */}
+                <div className="pointer-events-none absolute inset-0 -z-10 opacity-60 [background:radial-gradient(600px_300px_at_20%_0%,rgba(34,211,238,0.12),transparent_60%),radial-gradient(600px_300px_at_80%_20%,rgba(244,114,182,0.10),transparent_60%)]" />
+                <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
+
+                {/* Header inside drawer */}
+                <div className="flex items-center gap-3 border-b border-white/10 px-4 py-3">
+                  <Avatar className="w-10 h-10">
+                    <AvatarImage src="./ieee-logo.jpg" alt="Avatar" className="rounded-lg w-10 h-10" />
+                    <AvatarFallback />
+                  </Avatar>
+                  <div className="flex flex-col">
+                    <span className="font-mono text-base text-white">IEEE BPIT</span>
+                    <span className="text-[11px] text-white/60">Explore • Build • Learn</span>
+                  </div>
+                </div>
+
+                {/* Nav links */}
+                <div className="flex flex-col px-2 py-2">
+                  {navItems.map((item) => (
+                    <SheetClose asChild key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="block rounded-xl px-4 py-3 text-lg font-mono font-bold text-white hover:bg-white/5 border border-transparent hover:border-white/10 transition-colors"
+                        aria-label={`Go to ${item.text}`}
+                      >
+                        {item.text}
+                      </Link>
+                    </SheetClose>
+                  ))}
+                </div>
+
+                {/* Footer actions */}
+                <div className="mt-auto px-4 py-3 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-xs text-white/60">© {new Date().getFullYear()} IEEE BPIT</span>
+                  <SheetClose asChild>
+                    <Button variant="ghost" size="sm" className="gap-2">
+                      <X className="h-4 w-4" /> Close
+                    </Button>
+                  </SheetClose>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </nav>
-        {mobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in mt-2">
-            <div className="flex flex-col space-y-4 rounded-xl bg-background/90 backdrop-blur-lg p-4 border border-primary/5 dark:border-primary/10 shadow-lg">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="hover-underline text-2xl font-bold py-2 text-black dark:text-white"
-                >
-                  {item.text}
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </header>
   );
