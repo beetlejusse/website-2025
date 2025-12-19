@@ -19,13 +19,19 @@ import Threads from "@/ui/Threads/Threads";
 import axios from "axios";
 import { toast } from "sonner";
 
+const githubURL = process.env.NEXT_PUBLIC_GITHUB_URL;
+const linkedinURL = process.env.NEXT_PUBLIC_LINKEDIN_URL;
+const instagramURL = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
+const ieeeMail = process.env.NEXT_PUBLIC_IEEE_MAIL_ADDRESS;
+const joiningformURL = process.env.NEXT_PUBLIC_JOINING_FORM_URL;
+
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email.trim()) {
       toast.error("Please enter a valid email address");
       return;
@@ -94,28 +100,28 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Link
-                  href="https://github.com/Team-IEEE-BPIT"
+                  href={`${githubURL}`}
                   aria-label="GitHub"
                   className="group p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"
                 >
                   <Github className="h-5 w-5 text-white/90 group-hover:text-white" />
                 </Link>
                 <Link
-                  href="https://www.instagram.com/ieee.bpit"
+                  href={`${instagramURL}`}
                   aria-label="Instagram"
                   className="group p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"
                 >
                   <Instagram className="h-5 w-5 text-white/90 group-hover:text-white" />
                 </Link>
                 <Link
-                  href="https://www.linkedin.com/company/ieee-bpit"
+                  href={`${linkedinURL}`}
                   aria-label="LinkedIn"
                   className="group p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"
                 >
                   <Linkedin className="h-5 w-5 text-white/90 group-hover:text-white" />
                 </Link>
                 <Link
-                  href="mailto:ieee-bpit@bpitindia.com"
+                  href={`mailto:${ieeeMail}`}
                   aria-label="Email"
                   className="group p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"
                 >
@@ -245,20 +251,13 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2 text-gray-200">
                 <li>
-                  <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfKI2O6a3kpbRH4Q_cjn-quDsz3zoEhC2IU3HjEUK0Xvwq1Ww/viewform" className="hover:text-white hover-underline">
+                  <Link
+                    href={`${joiningformURL}`}
+                    className="hover:text-white hover-underline"
+                  >
                     Joining Form
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="#" className="hover:text-white hover-underline">
-                    Society Guidelines
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white hover-underline">
-                    Branding Kit
-                  </Link>
-                </li> */}
               </ul>
             </div>
 
@@ -296,8 +295,11 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} IEEE BPIT. All rights reserved.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="mailto:ieee-bpit@bpitindia.com" className="hover:text-white hover-underline">
-                ieee-bpit@bpitindia.com
+              <Link
+                href={`mailto:${ieeeMail}`}
+                className="hover:text-white hover-underline"
+              >
+                {ieeeMail}
               </Link>
               <span className="text-white/20">|</span>
               <div className="hover:text-white hover-underline cursor-pointer">
