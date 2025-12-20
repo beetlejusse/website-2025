@@ -28,7 +28,7 @@ export default function Home() {
       </div>
 
       <Hero />
-        <Teams />
+      <Teams />
       <section className="h-screen flex items-center justify-center">
         <Footer />
       </section>
