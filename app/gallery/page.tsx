@@ -7,13 +7,12 @@ import Aurora from "@/ui/Aurora/Aurora";
 import Navbar from "@/components/Navbar";
 import { cn } from "@/lib/utils";
 
-// Gallery items data with enhanced sizing
 const galleryItems = [
   {
     id: "1",
     src: "/events/datadive.png",
     title: "Data Dive Workshop",
-    size: "feature", // Largest 2x2
+    size: "feature",
     category: "Workshop",
     aspectRatio: "square",
   },
@@ -67,19 +66,17 @@ const galleryItems = [
   },
 ];
 
-// Simple quilt pattern for a not-too-busy layout
 const quiltPattern = [
-  { col: 2, row: 2 }, // feature tile
+  { col: 2, row: 2 },
   { col: 1, row: 1 },
-  { col: 1, row: 2 }, // tall tile
-  { col: 2, row: 1 }, // wide tile
+  { col: 1, row: 2 },
+  { col: 2, row: 1 },
   { col: 1, row: 1 },
   { col: 1, row: 1 },
   { col: 1, row: 1 },
 ];
 function getQuiltSpan(index: number) {
   const p = quiltPattern[index % quiltPattern.length];
-  // Apply spans from md+ to keep mobile simple
   const col = p.col;
   const row = p.row;
   return cn(
@@ -98,7 +95,6 @@ function GalleryCard({ item, index }: { item: typeof galleryItems[0]; index: num
       viewport={{ once: true, margin: "-80px" }}
       className="group relative h-full overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl shadow-[0_8px_30px_-10px_rgba(0,0,0,0.6)]"
     >
-      {/* Image fills card height controlled by grid row-span */}
       <div className="relative h-full w-full">
         <Image
           src={item.src}
@@ -131,8 +127,7 @@ export default function GalleryPage() {
       <Navbar />
       <Aurora className="z-0 opacity-60" palette="cosmic" intensity={0.8} />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-16">
-        {/* Header */}
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-28 pb-16">
         <motion.header
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -146,7 +141,6 @@ export default function GalleryPage() {
           </p>
         </motion.header>
 
-        {/* Quilted grid: simple, varied, and dense */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 grid-flow-dense auto-rows-[9rem] sm:auto-rows-[10rem] md:auto-rows-[12rem] lg:auto-rows-[12rem] xl:auto-rows-[14rem]">
           {galleryItems.map((item, index) => (
             <div key={item.id} className={getQuiltSpan(index)}>

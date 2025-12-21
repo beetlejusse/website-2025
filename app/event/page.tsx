@@ -4,8 +4,8 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import Navbar from "@/components/Navbar"
 import Aurora from "@/ui/Aurora/Aurora"
+import Navbar from "@/components/Navbar"
 
 interface Project {
   id: string
@@ -104,12 +104,10 @@ function Tile({
           priority={project.featured}
           className="object-cover object-center opacity-80 transition duration-500 group-hover:scale-105 group-hover:opacity-100"
         />
-        {/* Dark gradient & grid overlay so text stays readable */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/10" />
         <div className="pointer-events-none absolute inset-0 opacity-30 [background:radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:18px_18px]" />
       </div>
 
-      {/* Content */}
       <div className="relative h-full flex flex-col justify-end p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-2 flex-wrap">
           {project.tags?.map((tag) => (
@@ -130,11 +128,9 @@ function Tile({
         
       </div>
 
-      {/* Neon corner glows */}
       <div className="pointer-events-none absolute -top-12 -left-12 h-40 w-40 bg-cyan-500/20 blur-3xl rounded-full" />
       <div className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 bg-fuchsia-500/20 blur-3xl rounded-full" />
 
-      {/* Subtle ring on hover */}
       <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/10 group-hover:ring-white/20 transition" />
     </motion.article>
   )
@@ -143,18 +139,15 @@ function Tile({
 export default function Page() {
   return (
     <div className="relative min-h-screen w-full bg-black text-white overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 z-0">
         <Aurora intensity={1} followMouse={true} palette="festival" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_800px_at_50%_-10%,rgba(255,255,255,0.04),transparent_60%)]" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/70" />
       </div>
 
-      {/* Header */}
       <Navbar />
 
       <main className="relative container mx-auto px-4 pt-28 pb-16">
-        {/* Page heading */}
         <div className="mx-auto mb-8 sm:mb-12 max-w-4xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -168,15 +161,12 @@ export default function Page() {
           </p>
         </div>
 
-        {/* Bento Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-6 lg:grid-cols-12 auto-rows-[14rem] sm:auto-rows-[16rem] gap-4">
-          {/* Featured tile spanning full width */}
           <Tile
             project={projects[0]}
             className="col-span-1 sm:col-span-6 lg:col-span-12 row-span-2"
           />
 
-          {/* Two medium tiles */}
           <Tile
             project={projects[1]}
             className="col-span-1 sm:col-span-3 lg:col-span-6 row-span-2"
@@ -186,7 +176,6 @@ export default function Page() {
             className="col-span-1 sm:col-span-3 lg:col-span-6 row-span-2"
           />
 
-          {/* Small tiles */}
           <Tile
             project={projects[3]}
             className="col-span-1 sm:col-span-3 lg:col-span-4 row-span-1"
@@ -201,7 +190,6 @@ export default function Page() {
           />
         </div>
 
-        {/* Callout */}
         <div className="mt-12 sm:mt-16 mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur">
             <p className="text-sm text-white/80">

@@ -11,7 +11,7 @@ export default function FacultyPage() {
   const list = FACULTY;
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-[#0b0b0f] text-white">
+    <main className="relative min-h-screen w-full overflow-hidden bg-[#10101d] text-white">
       <Navbar />
       <Aurora className="z-0" palette="cosmic" intensity={0.9} />
 

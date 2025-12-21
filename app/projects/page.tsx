@@ -4,8 +4,8 @@ import React, { useMemo, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import Navbar from "@/components/Navbar"
 import Constellation from "@/ui/Constellation/Constellation"
+import Navbar from "@/components/Navbar"
 
 interface Project {
   id: string
@@ -176,7 +176,6 @@ export default function ProjectsPage() {
 
   return (
     <div className="relative min-h-screen w-full bg-black text-white overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 z-0">
         <Constellation
           density={0.16}
@@ -193,11 +192,9 @@ export default function ProjectsPage() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/60" />
       </div>
 
-      {/* Header */}
       <Navbar />
 
       <main className="relative z-10 container mx-auto px-4 pt-28 pb-20">
-        {/* Hero */}
         <div className="mx-auto max-w-4xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-cyan-400" />
@@ -245,12 +242,9 @@ export default function ProjectsPage() {
                 </button>
               )}
             </div>
-          </div>
-
-          
+          </div>          
         </div>
 
-        {/* Grid */}
         <motion.section
           variants={containerVariants}
           initial="hidden"
@@ -276,7 +270,6 @@ export default function ProjectsPage() {
           </AnimatePresence>
         </motion.section>
 
-        {/* CTA */}
         <div className="mx-auto mt-12 max-w-3xl text-center">
           <div className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur">
             <p className="text-sm text-white/80">
