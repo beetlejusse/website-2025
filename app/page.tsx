@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 
 import LightRays from "@/ui/LightRays/LightRays";
 import Footer from "@/components/Footer";

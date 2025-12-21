@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useEffect, useRef } from "react";
-import Navbar from "@/components/Navbar";
+
 import LightRays from "@/ui/LightRays/LightRays";
 
 const COLOR = "#FFFFFF";

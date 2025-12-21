@@ -131,6 +131,7 @@ function Tile({
       <div className="pointer-events-none absolute -top-12 -left-12 h-40 w-40 bg-cyan-500/20 blur-3xl rounded-full" />
       <div className="pointer-events-none absolute -bottom-12 -right-12 h-48 w-48 bg-fuchsia-500/20 blur-3xl rounded-full" />
 
+      
       <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-white/10 group-hover:ring-white/20 transition" />
     </motion.article>
   )
