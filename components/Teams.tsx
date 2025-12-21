@@ -10,7 +10,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Experience fast and efficient charging with USB-C compatibility, ensuring you never run out of power.",
+        text: "Leads the council, sets vision, and ensures smooth execution across teams.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -22,7 +22,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Crafted with precision, the sleek design complements any modern workspace or lifestyle.",
+        text: "Supports the chair, drives initiatives, and keeps teams aligned and accountable.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -34,7 +34,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Built to last, with robust materials that ensure long-term reliability and performance.",
+        text: "Manages budgets, tracking, and transparent allocations for events and projects.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -46,7 +46,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Built to last, with robust materials that ensure long-term reliability and performance.",
+        text: "Oversees documentation, scheduling, and cross-team coordination.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -58,7 +58,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Built to last, with robust materials that ensure long-term reliability and performance.",
+        text: "Builds and maintains web platforms, ensuring reliability and performance.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -73,7 +73,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-red-500", // Changed to brighter red for visibility on dark bg
       },
       description: {
-        text: "Equipped with cutting-edge technology to enhance your productivity and experience.",
+        text: "Represents the council, mentors teams, and steers long-term strategy.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -84,7 +84,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Intuitive controls and seamless connectivity for an effortless user experience.",
+        text: "Coordinates operations, removes blockers, and ensures timely delivery.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -95,7 +95,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Manufactured with environmentally sustainable materials, contributing to a greener planet.",
+        text: "Oversees finance, budgets, reimbursements, and expense governance.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -106,7 +106,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Manufactured with environmentally sustainable materials, contributing to a greener planet.",
+        text: "Manages records, communications, and inter-team coordination.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,
@@ -117,7 +117,7 @@ const articleTop = [
         className: "text-xl md:text-2xl lg:text-3xl font-pixel text-white",
       },
       description: {
-        text: "Manufactured with environmentally sustainable materials, contributing to a greener planet.",
+        text: "Owns the website stack, infrastructure, and overall tech quality.",
         className: "text-gray-300 font-mono text-sm md:text-base",
       },
       icon: <BsLightningCharge className="scale-[2] text-white" />,

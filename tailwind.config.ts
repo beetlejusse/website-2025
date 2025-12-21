@@ -92,11 +92,16 @@ const config: Config = {
 					to: {
 						height: '0'
 					}
+				},
+				shine: {
+					'0%': { transform: 'translateX(-100%) rotate(45deg)' },
+					'80%, 100%': { transform: 'translateX(150%) rotate(45deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shine': 'shine 1.5s ease-in-out infinite'
 			}
 		}
 	},

@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import { Component } from "@/components/ui/etheral-shadow";
+import TiltedCard from "@/ui/TiltedCard/TiltedCard";
 import React from "react";
 
 const page = () => {

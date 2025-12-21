@@ -9,7 +9,13 @@ const Card = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      // Modern glass card base
+      "relative rounded-3xl border border-white/10 bg-white/[0.05] backdrop-blur-xl text-card-foreground",
+      // Rich shadow
+      "shadow-[0_10px_40px_-10px_rgba(0,0,0,0.55)]",
+      // Subtle gradient edge highlight and inner hairline using pseudo elements
+      "before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:bg-[radial-gradient(800px_300px_at_-10%_-10%,rgba(255,255,255,0.06),transparent_60%)]",
+      "after:absolute after:inset-px after:rounded-[inherit] after:shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]",
       className
     )}
     {...props}

@@ -1,0 +1,19 @@
+# IEEE BPIT Website Security Policy
+
+# Prevent clickjacking
+X-Frame-Options: DENY
+
+# Prevent MIME type sniffing
+X-Content-Type-Options: nosniff
+
+# Enable XSS protection
+X-XSS-Protection: 1; mode=block
+
+# Referrer Policy
+Referrer-Policy: strict-origin-when-cross-origin
+
+# Permissions Policy
+Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Content Security Policy (adjust based on your needs)
+# Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'
