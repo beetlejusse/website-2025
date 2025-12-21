@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
+import NavBar from "@/components/Navbar";
 import LightRays from "@/ui/LightRays/LightRays";
 import { Calendar, MapPin, Clock, Users, Code, Cpu, Bot, Globe } from "lucide-react";
 
@@ -165,7 +165,7 @@ export default function SIGPage() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/10 to-black/70" />
       </div>
 
-      <Navbar />
+       <NavBar />
 
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
      

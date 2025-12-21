@@ -8,7 +8,7 @@ import { Avatar } from "@radix-ui/react-avatar";
 import { AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 
-export default function Navbar() {
+export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
